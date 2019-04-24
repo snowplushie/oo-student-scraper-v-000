@@ -38,5 +38,6 @@ class Scraper
           profile_hash[:bio] = link
         end
       end
+    end
 end
 
