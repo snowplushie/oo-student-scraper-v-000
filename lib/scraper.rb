@@ -26,6 +26,17 @@ class Scraper
       profile_page.each do |link|
         if link.include?("twitter")
           profile_hash[:twitter] = link
-          elsif link.include?
+        elsif link.include?("linkedin")
+          profile_hash[:linkedin] = link
+        elsif link.include?("github")
+          profile_hash[:github] = link
+        elsif link.include?(".com")
+          profile_hash[:blog] = link
+        elsif link.include?("profile-quote")
+          profile_hash[:profile_quote] = link
+        else link.include?("bio")
+          profile_hash[:bio] = link
+        end
+      end
 end
 
