@@ -34,7 +34,7 @@ class Scraper
           profile_hash[:blog] = link
         elsif link.include?("profile-quote")
           profile_hash[:profile_quote] = link
-        else link.include?("bio")
+        elsif link.include?("bio")
           profile_hash[:bio] = link
         end
       end
