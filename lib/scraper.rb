@@ -18,7 +18,7 @@ class Scraper
   end
 
   def self.scrape_profile_page(profile_url)
-    scrape_page = Nokogir
+    
   end
 
 end
