@@ -1,5 +1,5 @@
 require 'open-uri'
-require 'pry'
+require 'nokogiri'
 
 class Scraper
 
@@ -18,8 +18,14 @@ class Scraper
   end
 
   def self.scrape_profile_page(profile_url)
-    
+    scrape_page = Nokogiri::HTML(open(profile_url))
+    profile_hash = {}
+    profile_page = scrape_page.css(".social-icon-container a").collect do |icon|
+      icon.attribute("href").value
   end
-
+      profile_page.each do |link|
+        if link.include?("twitter")
+          profile_hash[:twitter] = link
+          elsif link.include?
 end
 
